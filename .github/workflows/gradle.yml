@@ -97,6 +97,12 @@ jobs:
           type=raw,value=latest,enable={{is_default_branch}}
           type=raw,value=sha-{{sha}}
 
+    - name: Verify Dockerfile exists
+      run: |
+        ls -la
+        pwd
+        test -f Dockerfile && echo "Dockerfile found" || echo "Dockerfile not found"
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
 
