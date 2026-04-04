@@ -109,8 +109,8 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: ..
-        file: ../Dockerfile
+        context: /home/runner/work/springboot-backend
+        file: /home/runner/work/springboot-backend/Dockerfile
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
