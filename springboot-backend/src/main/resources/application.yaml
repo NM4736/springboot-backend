@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: springboot-backend
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+  health:
+    probes:
+      enabled: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    net.javaguides.springboot: INFO
+    org.springframework.web: DEBUG
