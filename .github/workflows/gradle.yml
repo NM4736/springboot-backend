@@ -6,7 +6,8 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
 
 name: Java CI with Gradle
-run-name: Deploy to ${{ github.ref_name }} by @${{ github.actor }}${{ github.event.pull_request && format(' from PR ') }} }}
+run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+
 on:
   push:
     branches: [ "main" ]
