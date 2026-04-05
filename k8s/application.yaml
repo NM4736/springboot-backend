@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Nitesh4736/springboot-backend.git
+    repoURL: https://github.com/NM4736/springboot-backend.git
     targetRevision: main
     path: k8s
   destination:
