@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: springboot-app
-        image: ghcr.io/Nitesh4736/springboot-backend:latest
+        image: ghcr.io/nm4736/springboot-backend:latest
         ports:
         - containerPort: 8080
         env:
