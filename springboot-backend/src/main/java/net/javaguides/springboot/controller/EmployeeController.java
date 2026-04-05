@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import jakarta.validation.Valid;
 
 import net.javaguides.springboot.model.Employee;
 import net.javaguides.springboot.service.EmployeeService;
@@ -21,7 +22,6 @@ import net.javaguides.springboot.service.EmployeeService;
 public class EmployeeController {
 	
 	private EmployeeService employeeService;
-
 	public EmployeeController(EmployeeService employeeService) {
 		super();
 
@@ -30,7 +30,7 @@ public class EmployeeController {
 	
 	// build create employee REST API
 	@PostMapping()
-	public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee){
+	public ResponseEntity<Employee> saveEmployee(@Valid @RequestBody Employee employee){
 		return new ResponseEntity<Employee>(employeeService.saveEmployee(employee), HttpStatus.CREATED);
 	}
 	
@@ -51,7 +51,7 @@ public class EmployeeController {
 	// http://localhost:8080/api/employees/1
 	@PutMapping("{id}")
 	public ResponseEntity<Employee> updateEmployee(@PathVariable("id") long id
-												  ,@RequestBody Employee employee){
+												  ,@Valid @RequestBody Employee employee){
 		return new ResponseEntity<Employee>(employeeService.updateEmployee(employee, id), HttpStatus.OK);
 	}
 	
