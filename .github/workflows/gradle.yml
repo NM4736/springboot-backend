@@ -109,14 +109,12 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: ${{ github.workspace }}
-        file: ${{ github.workspace }}/Dockerfile
-        push: true
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
-
+       context: ${{ github.workspace }}
+       file: ${{ github.workspace }}/Dockerfile
+       push: true
+       platforms: linux/amd64,linux/arm64
+       tags: ${{ steps.meta.outputs.tags }}
+       labels: ${{ steps.meta.outputs.labels }}
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
     #
