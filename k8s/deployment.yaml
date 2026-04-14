@@ -4,7 +4,8 @@ metadata:
   name: springboot-app
   namespace: springboot-app
 spec:
-  replicas: 2
+  minReplicas: 2
+  maxReplicas: 10
   selector:
     matchLabels:
       app: springboot-app
